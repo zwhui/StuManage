@@ -16,19 +16,19 @@ public class DelCourseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 			
 	/**
-	 * ɾ����ѡ�γ�
+	 * É¾³ýÒÑÑ¡¿Î³Ì
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setCharacterEncoding("utf-8");
 		String alreadycourseid=request.getParameter("alreadyid");
 		CourseService cs = new CourseServiceImpl();
 		cs.DelCourse(alreadycourseid);
-		request.setAttribute("message", "ɾ���ɹ�");
+		request.setAttribute("message", "É¾³ý³É¹¦");
 		request.getRequestDispatcher("AlreadyServlet").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");//几
 		doGet(request, response);
 	}
 
